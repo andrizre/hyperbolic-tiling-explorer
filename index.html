@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hyperbolic Tiling Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="panel">
+    <h1>Hyperbolic Tiling Explorer</h1>
+    <p class="sub">{p,q} regular tilings on the Poincaré disk</p>
+    <div class="row">
+      <label>Schläfli {p,q}</label>
+      <div class="sliders">
+        <span>p <input type="range" id="p" min="3" max="12" value="7"><b id="pVal">7</b></span>
+        <span>q <input type="range" id="q" min="3" max="12" value="3"><b id="qVal">3</b></span>
+      </div>
+    </div>
+    <div class="row">
+      <label>Recursion depth <b id="depthVal">5</b></label>
+      <input type="range" id="depth" min="1" max="8" value="5">
+    </div>
+    <div class="row">
+      <label>Palette</label>
+      <div id="palettes"></div>
+    </div>
+    <div class="row checks">
+      <label><input type="checkbox" id="colorFund" checked> Color by depth</label>
+      <label><input type="checkbox" id="animate"> Spin</label>
+      <label><input type="checkbox" id="showGeo" checked> Show edges</label>
+    </div>
+    <div class="row buttons">
+      <button id="randomize">Random {p,q}</button>
+      <button id="save">Save PNG</button>
+    </div>
+    <p id="info"></p>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+* { box-sizing: border-box; margin: 0; }
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #0b0e14;
+  color: #d8dee9;
+  overflow: hidden;
+}
+#app { display: flex; width: 100vw; height: 100vh; }
+#canvas { flex: 1; display: block; background: #0b0e14; cursor: grab; }
+#panel {
+  width: 280px;
+  background: #12161f;
+  border-left: 1px solid #232a38;
+  padding: 18px;
+  overflow-y: auto;
+}
+h1 { font-size: 18px; margin-bottom: 2px; color: #fff; }
+.sub { font-size: 12px; color: #7a8699; margin-bottom: 16px; }
+.row { margin-bottom: 14px; }
+.row label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #8fa0b8; margin-bottom: 6px; }
+.sliders span { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 6px; }
+.sliders b { width: 22px; text-align: right; color: #ffd166; }
+input[type=range] { flex: 1; accent-color: #ff9f43; }
+.checks label { display: flex; align-items: center; gap: 6px; text-transform: none; letter-spacing: 0; font-size: 13px; color: #d8dee9; margin-bottom: 4px; }
+#palettes { display: flex; gap: 6px; flex-wrap: wrap; }
+.swatch {
+  width: 34px; height: 22px; border-radius: 4px; cursor: pointer;
+  border: 2px solid transparent;
+}
+.swatch.active { border-color: #ffd166; }
+.buttons { display: flex; gap: 8px; }
+button {
+  flex: 1; padding: 8px 0; border: 1px solid #2c3648; border-radius: 6px;
+  background: #1a2130; color: #d8dee9; cursor: pointer; font-size: 13px;
+}
+button:hover { background: #243049; }
+#info { font-size: 11px; color: #6a7688; line-height: 1.5; }
