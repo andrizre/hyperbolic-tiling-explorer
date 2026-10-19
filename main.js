@@ -14,6 +14,7 @@ const params = {
   colorFund: true,
   animate: false,
   showGeo: true,
+  zoom: 1,
 };
 
 const PALETTES = [
@@ -121,7 +122,7 @@ function drawTiling() {
   const { p, q } = params;
   const fund = computeFundamental(p, q, rotAngle);
   const W = canvas.width, H = canvas.height;
-  const scale = Math.min(W, H) * 0.48;
+  const scale = Math.min(W, H) * 0.48 * params.zoom;
   const ox = W / 2, oy = H / 2;
   const pal = PALETTES[params.palette];
 
@@ -230,6 +231,17 @@ function lerpColor(a, b, t) {
 /* ---------- interaction: drag to spin ---------- */
 let rotAngle = 0;
 let dragging = false, lastX = 0;
+
+/* ---------- interaction: wheel zoom + double-click reset ---------- */
+canvas.addEventListener("wheel", e => {
+  e.preventDefault();
+  params.zoom = Math.min(8, Math.max(0.25, params.zoom * (e.deltaY < 0 ? 1.12 : 1 / 1.12)));
+  drawTiling();
+}, { passive: false });
+canvas.addEventListener("dblclick", () => {
+  params.zoom = 1;
+  drawTiling();
+});
 
 /* ---------- UI ---------- */
 function fitCanvas() {

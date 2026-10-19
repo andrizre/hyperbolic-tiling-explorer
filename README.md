@@ -18,6 +18,7 @@ recursively. Tiles are deduplicated by exact vertex signature.
 - Recursion depth control with a 20k-tile safety cap
 - 6 palettes, color-by-depth gradient or two-tone alternation
 - Geodesic arcs on/off, disk spin animation, drag-to-rotate
+- Scroll-wheel zoom (0.25×–8×) with double-click reset
 - PNG export of the current canvas
 - Live tile count readout
 
